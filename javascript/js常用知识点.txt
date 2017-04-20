@@ -1,0 +1,26 @@
+1.js字符串转html标签   https://segmentfault.com/q/1010000007302165
+	遇到一个问题:var str = "<span>hk</span>",这是一段字符串，
+	获取放在网页上显示也是一段字符串：<span>hk</span>，此时的<span></span>不是标签
+	怎么才能让<span></span>在网页上以标签方式显示呢?
+	右击查看htmlelement的时候，变成这样了:
+	<span>hk</span>
+	百度了，但是没起效，请大神指点
+	
+	var str = '<span>hk</span>';
+	var div = document.createElement('div');
+	div.innerHTML = str;
+	var span = div.childNodes[0];
+	var body = document.getElementsByTagName('body')[0];
+	body.appendChild(span);
+
+2.js控制HTML元素的显示和隐藏
+	利用来JS控制页面控件显示和隐藏有两种方法，两种方法分别利用HTML的style中的两个属性，两种方法的不同之处在于控件隐藏后是否还在页面上占空位。
+	方法一：
+		document.getElementById("EleId").style.visibility = "hidden";
+		document.getElementById("EleId").style.visibility="visible";
+		利用上述方法实现隐藏后，页面的位置还被控件占用，显示空白。
+	方法二：
+		document.getElementById("EleId").style.display="none";
+		document.getElementById("EleId").style.display="inline";
+		利用上述方法实现隐藏后，页面的位置不被占用。
+		

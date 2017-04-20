@@ -1,0 +1,15 @@
+-----------------------------------------   常用查询
+-- 查询所有用户
+select * from all_users;
+-- 显示当前用户
+select user from dual;
+select * from user_users;
+-- 显示用户表
+select * from user_tables;
+
+
+
+
+-----------------------------------------   常用函数
+1.字段为空则取后面的值
+	select nvl(字段名,0) as 字段名,... from table
